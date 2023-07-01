@@ -1,0 +1,32 @@
+mutation CreateNewUser($newUser: NewUserInput!) {
+  createNewUser(newUser: $newUser) {
+    user {
+      email
+      id
+      username
+      firstName
+      lastName
+    }
+    token
+  }
+}
+
+
+query GetAllUser {
+  getAllUser {
+    username
+    email
+    firstName
+    lastName
+    id
+  }
+}
+query AuthenticateUser($username: String!, $password: String!) {
+  authenticateUser(username: $username, password: $password) {
+    user {
+      email
+      id
+    }
+    token
+  }
+}
