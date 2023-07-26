@@ -8,6 +8,7 @@ export default gql`#graphql
 
     type Mutation{
         createProject(newProject: ProjectInput!): Project! @isAuth
+        updateProject(id: ID!, updatedProject: ProjectInput!): Project! @isAuth
     }
 
     input ProjectInput{

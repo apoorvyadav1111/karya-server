@@ -45,6 +45,7 @@ export default {
     },
     Mutation:{
         createNewUser: async(_, {newUser}, {User}) => {
+            console.log(newUser);
             try{
                 let { username, email} = newUser;
 

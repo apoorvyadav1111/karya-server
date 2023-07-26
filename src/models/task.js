@@ -9,8 +9,14 @@ const TaskSchema = new Schema({
         type:String,
         required:true
     },
+    status:{
+        type:String,
+        required:true,
+        default:'PENDING'
+    },
     hours_spent:{
         type:Number,
+        default:0
     },
     total_hours:{
         type:Number,
@@ -47,6 +53,7 @@ const TaskSchema = new Schema({
     type:{
         type:String,
         required:true,
+        default:'TASK',
     },
     link:{
         type:Schema.Types.ObjectId,
