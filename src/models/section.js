@@ -8,11 +8,6 @@ const SectionSchema = new Schema({
     description:{
         type:String,
     }, 
-    tasks:{
-        type:[Schema.Types.ObjectId],
-        ref:'tasks',
-        required:true
-    },
     project:{
         type:Schema.Types.ObjectId,
         ref:'projects',

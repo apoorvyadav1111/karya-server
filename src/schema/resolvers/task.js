@@ -65,7 +65,6 @@ export default {
         createTask: async(_, {newTask}, {Task, user, isAuth}) => {
             try{
                 let {assigned_by , assigned_to} = newTask;
-                console.log(newTask);
 
                 if(!assigned_by || assigned_by===''){
                     newTask.assigned_by = user;
@@ -78,6 +77,7 @@ export default {
                 await result.populate('assigned_to');
                 await result.populate('project');
                 await result.populate('section');
+                await result.populate('link');
                 return result;
             }catch(err){
                 throw new GraphQLError(err.message, {
@@ -102,6 +102,7 @@ export default {
                 await newTask.populate('assigned_to');
                 await newTask.populate('project');
                 await newTask.populate('section');
+                await newTask.populate('link');
                 return {
                     success:true,
                     task:newTask

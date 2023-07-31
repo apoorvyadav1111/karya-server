@@ -7,7 +7,6 @@ const ProjectSchema = new Schema({
     },
     description:{
         type:String,
-        required: true
     },
     sections:[
         {type: Schema.Types.ObjectId, ref:'sections'}

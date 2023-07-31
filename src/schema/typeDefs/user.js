@@ -5,13 +5,14 @@ export default gql`#graphql
     type Query {
         authUser: User!
         authenticateUser(username: String!, password: String!): AuthResp!
-        getAllUser:[User!] @isAuth
+        getUser:User! @isAuth
     }
 
     type Mutation{
         createNewUser(newUser: NewUserInput!):AuthResp!
-        editUserById(updatedUser: UserInput!, id: ID!): User! 
-        deleteUserById(id:ID!):UserNotification!
+        editUser(updatedUser: UserInput!): User! 
+        deleteUser(password: String!):UserNotification!
+        updatePassword(oldPassword: String!, newPassword: String!): UserNotification!
     }
 
     input NewUserInput{
@@ -27,8 +28,6 @@ export default gql`#graphql
         firstName: String
         lastName: String
         email:String
-        password: String
-        newpassword: String
     }
 
     type AuthResp{

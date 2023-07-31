@@ -70,7 +70,8 @@ export default gql`
         end_date: Date,
         due_date: Date,
         assigned_to: ID,
-        type:String
+        type:String,
+        link: ID,
     }
 
     type ProjectInfo{
