@@ -42,12 +42,18 @@ const TaskSchema = new Schema({
     assigned_by:{
         type: Schema.Types.ObjectId,
         ref: 'users',
-        required:true
+        required:true,
+        populate: {
+            includeDeleted: true
+        }
     },
     assigned_to:{
         type: Schema.Types.ObjectId,
         ref: 'users',
-        required: true
+        required: true,
+        populate: {
+            includeDeleted: true
+          }
     },
     type:{
         type:String,

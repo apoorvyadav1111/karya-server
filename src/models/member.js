@@ -4,7 +4,10 @@ const MemberSchema = new Schema({
     member:{
         type: Schema.Types.ObjectId,
         ref:'users',
-        required:true
+        required:true,
+        populate: {
+            includeDeleted: true
+        }
     },
     active:{
         type: Boolean,
